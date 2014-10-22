@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"github.com/mattn/kocho/db"
 	"github.com/mattn/kocho/app/model"
+	"github.com/mattn/kocho/db"
 	"github.com/naoina/kocha"
 )
 

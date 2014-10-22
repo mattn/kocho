@@ -5,7 +5,7 @@ import (
 )
 
 type User struct {
-	Id int64 `db:"pk" json:"id"`
+	Id   int64  `db:"pk" json:"id"`
 	Name string `json:"name"`
 
 	genmai.TimeStamp
