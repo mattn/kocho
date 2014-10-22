@@ -1,0 +1,26 @@
+{{define "content"}}
+<script>
+$(function() {
+	function update() {
+		$.getJSON("/users", function(data) {
+			var $u = $('#users').empty();
+			$.each(data, function(index, user) {
+				$('<li/>').text(user.name).appendTo($u)
+			});
+		})
+	}
+	$('#send').click(function() {
+		$.post("/users", {"name": $('#name').val()}, function() {
+			$('#name').val('');
+			update();
+		});
+	});
+	update();
+})
+</script>
+<h1 class="title">ユーザ一覧</h1>
+<label for="name">名前</label>
+<input id="name" type="text">
+<input id="send" type="submit" value="追加">
+<ul id="users"></ul>
+{{end}}
